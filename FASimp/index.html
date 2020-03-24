@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preload" href="../fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="../fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="../css/screen.css" as="style">
+    <link rel="stylesheet" href="../css/screen.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body class="wrap">
+<header>
+    <div class="flexbox">
+        <div class="center-on-mobiles">
+            <h1>
+                <a href="#" class="logo">
+                    <span class="sr-only">SimpOrg</span>
+                    <img src="../img/simplogo.png" width="120" height="65" alt="SimpOrg Logo">
+                </a>
+            </h1>
+        </div>
+        <nav class="main-nav hide-on-mobiles">
+            <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../WSimp/index.html">What's a Simp?</a></li>
+            <li class="current"><a href="FASimp/">Find a Simp</a></li>
+            <li><a href="../BASimp/index.html">Become a Simp</a></li>
+            <li><a href="../Complain/index.html">Complain</a></li>
+            </ul>
+        </nav>
+        <div class="meta hide-on-mobiles">
+            <ul>
+                <li><a href="">v1.0.0</a></li>
+            </ul>
+        </div>
+    </div>
+    <nav class="mobile-nav show-on-mobiles">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../WSimp/index.html">What's a Simp?</a></li>
+            <li class="current"><a href="FASimp/">Find a Simp</a></li>
+            <li><a href="../BASimp/index.html">Become a Simp</a></li>
+            <li><a href="../Complain/index.html">Complain</a></li>
+        </ul>
+    </nav>
+</header>
+<!--All the code above should be copied-->
+
+<section class="intro">
+    <div class="grid">
+        <div class="unit whole center-on-mobiles">
+            <p class="first">Need a Simp?</p>
+        </div>
+    </div>
+</section>
+<section class="features">
+    <div class="grid">
+        <div class="unit one-half">
+            <h2>Here We Will Help You <em>Get</em> A Simp!</h2>
+            <p>
+               <em>when im not lazy anymore</em>.
+            </p>
+            <a href="/docs/usage/"></a>
+        </div>
+        
+</section>
+<section class="quickstart">
+    <div class="grid">
+        <div class="unit golden-small center-on-mobiles">
+            <h3>Get up and running <em>in&nbsp;seconds</em>.</h3>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+<section class="free-hosting">
+    <div class="grid">
+        <div class="unit whole">
+            <div class="grid pane">
+                <div class="unit whole center-on-mobiles">
+                    <div class="pane-content">
+                        <h2 class="center-on-mobiles"><strong></h2>
+                        <p>Just a link to the discord</p>
+                        <a href=""></a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--All the code below should be copied-->
+<footer>
+    <div class="grid">
+        <div class="unit one-third center-on-mobiles">
+            <p>SimpOrg is maintained by the simp team.</p>
+        </div>
+        <div class="unit two-thirds align-right center-on-mobiles">
+            <p>
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
+<script>
+    var anchorForId = function (id) {
+        var anchor = document.createElement("a");
+        anchor.className = "header-link";
+        anchor.href = "#" + id;
+        anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+        anchor.title = "Permalink";
+        return anchor;
+    };
+
+    var linkifyAnchors = function (level, containingElement) {
+        var headers = containingElement.getElementsByTagName("h" + level);
+        for (var h = 0; h < headers.length; h++) {
+            var header = headers[h];
+
+            if (typeof header.id !== "undefined" && header.id !== "") {
+                header.appendChild(anchorForId(header.id));
+            }
+        }
+    };
+
+    document.onreadystatechange = function () {
+        if (this.readyState === "complete") {
+            var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+            if (!contentBlock) {
+                return;
+            }
+            for (var level = 1; level <= 6; level++) {
+                linkifyAnchors(level, contentBlock);
+            }
+        }
+    };
+</script>
+</body>
+</html>
